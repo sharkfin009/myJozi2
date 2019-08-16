@@ -1,16 +1,20 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>MyJozi Map Analyzer</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tachyons-ben.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="../../bower_components/leaflet/leaflet.css"/>
+    <link rel="stylesheet" href="../../bower_components/leaflet/leaflet.css" />
     <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../../bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+    <link rel="stylesheet"
+        href="../../bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+        rel='stylesheet' />
     <link href="../css/sumoselect.css" rel="stylesheet" />
-
     <style>
         @media (min-width: 2000px) {
             .map {
@@ -23,29 +27,28 @@
                 height: 500px;
             }
         }
+
         div.row {
             margin-top: 16px;
         }
     </style>
-
 </head>
-<body>
-<div class="container">
-    <div class="page-header">
-        <h1 class="docs-heading">MyJozi Map Analyser <small>Version 0.1</small></h1>
-    </div>
 
-    <div >
-        <div >
-            <h2>Filter</h2>
-            <p>
-                <select id="Persons" size="5" multiple="multiple" placeholder="Select Person/s" >
+<body>
+    <section style="font-family: 'Lato', sans-serif;" class="">
+        <div class="">
+            <h1 class="tc pa3">MyJozi Map Analyser <small>Version 0.1</small></h1>
+        </div>
+        <div class="w-100 ph7  flex flex-wrap items-around justify-around ">
+            <div class="w5 mr2">
+                <label class="w5 tr">name of person/s</label>
+                <select class="w5 no-focus-ring" id="Persons" placeholder="Select Person/s">
                     <option value="aa35450b4a4084c1">person1</option>
                     <option value="a09727247b591873">person2</option>
                     <option value="180d2e955d575bde">person3</option>
-                    <option value="76c849a8469ceb29"></option>
-                    <option value="6f77b40a9d121222"></option>
-                    <option value="8b5cd36b6bbf279"></option>
+                    <option value="76c849a8469ceb29">person4</option>
+                    <option value="6f77b40a9d121222">person5</option>
+                    <option value="8b5cd36b6bbf279">person6</option>
                     <option value="d30f21ead669b524"></option>
                     <option value="2012571f06914863"></option>
                     <option value="7e6fec05f140c284"></option>
@@ -409,15 +412,20 @@
                     <option value="40224ae20e79e994"></option>
                     <option value="e58df553c417576f"></option>
                 </select>
-               
-                <select id="mode"  class="selectpicker">
+            </div>
+            <div class="w5 mr2">
+                <label class="w5 tr">transport mode</label>
+                <select class="w5 tr no-focus-ring" id="mode">
                     <option value="All">All</option>
                     <option value="On Foot">Walking</option>
                     <option value="In Vehic">Vehicle</option>
                     <option value="On Bicyc">Cycling</option>
                     <option value="Still">Still</option>
                 </select>
-                 <select id="race" placeholder="Select Race" class="selectpicker">
+            </div>
+            <div class="w5 mr2">
+                <label class="w5 tr">race</label>
+                <select class="w5 no-focus-ring" id="race" placeholder="Select Race" class="selectpicker">
                     <option value="All">All</option>
                     <option value="African">African</option>
                     <option value="Coloured">Coloured</option>
@@ -425,7 +433,10 @@
                     <option value="White">White</option>
                     <option value="Other">Other</option>
                 </select>
-                <select id="income" placeholder="Select Income" class="selectpicker">
+            </div>
+            <div class="w5 mr2">
+                <label class="w5 tr">income</label>
+                <select class="w5 no-focus-ring" id="income" placeholder="Select Income" class="selectpicker">
                     <option value="All">All</option>
                     <option value="R1 - R400">R1 - R400</option>
                     <option value="R401 - R800">R401 - R800</option>
@@ -440,19 +451,26 @@
                     <option value="R76 801 - R102 400">R76 801 - R102 400</option>
                     <option value="More">More</option>
                     <option value="No Income">No Income</option>
-
                 </select>
-                <select id="employment" placeholder="Select Employment" class="selectpicker">
+            </div>
+            <div class="w5 mr2">
+                <label class="w5 tr">employment</label>
+                <select class="w5 no-focus-ring" id="employment" placeholder="Select Employment" class="selectpicker">
                     <option value="All">All</option>
                     <option value="Not currently employed">Not currently employed</option>
                     <option value="Employed full time, formal sector">Employed full time, formal sector</option>
                     <option value="Employed part time, formal sector">Employed part time, formal sector</option>
                     <option value="Employed full time, informal sector">Employed full time, informal sector</option>
                     <option value="Employed part time, informal sector">Employed part time, informal sector</option>
-                    <option value="Self-employed, own business, NOT working from home">Self-employed, own business, NOT working from home</option>
-                    <option value="Self-employed, own business, working from home">Self-employed, own business, working from home</option>
+                    <option value="Self-employed, own business, NOT working from home">Self-employed, own business,
+                        NOT working from home</option>
+                    <option value="Self-employed, own business, working from home">Self-employed, own business,
+                        working from home</option>
                 </select>
-                <select id="city" placeholder="Select Municipality" class="selectpicker">
+            </div>
+            <div class="w5 mr2 ">
+                <label class="w5 tr">city</label>
+                <select class="w5 no-focus-ring" id="city" placeholder="Select Municipality" class="selectpicker">
                     <option value="All">All</option>
                     <option value="Johannesburg">Johannesburg</option>
                     <option value="Ekurhuleni">Ekurhuleni</option>
@@ -461,142 +479,122 @@
                     <option value="West Rand">West Rand</option>
                     <option value="Metsweding">Metsweding</option>
                 </select>
-            </p>
-            <p>
-            <div class="container">
-                <!-- <div class='col-md-5'>
-                    <div class="form-group">
-                        <div class='input-group date' id='datetimepicker1'>
-                            <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-                        </div>
-                    </div>
-                </div>
-                <div class='col-md-5'>
-                    <div class="form-group">
-                        <div class='input-group date' id='datetimepicker2'>
-                            <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span> -->
-                    <label for="fromDate">From Date:</label>
-			<input type="date" id="fromDate" value="2016-09-09" name="fromDate">
-			<label for="toDate">Dropoff Date:</label>
-			<input type="date" id="toDate" value="2016-10-15" name="toDate">
-                </span>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <button id="btnFilter" onclick="myFunction()">Filter</button>
+        </div>
+        <div class=" w-100 ph7 mt4 flex justify-center">
+            
+                <div class="w5 mh5 ">
+                    <label class="w5 tr" for="fromDate">from date:</label>
+                    <input class="b--solid br4 b--black-40 bg-black-10 w5 ph3 no-focus-ring" type="date" id="fromDate"
+                        value="2016-09-09" name="fromDate">
+                </div>
+                <div class="w5 mh5">
+                    <label class="w5 tr" for="toDate">to date:</label>
+                    <input class="b--solid br4 b--black-40 bg-black-10 w5 ph3 no-focus-ring" type="date" id="toDate"
+                        value="2016-10-15" name="toDate">
+                </div>
+                <button
+                    class="w-30 mh5 b--solid br4 b--gray mt4 ph5 f-4 bg-black-50 white-90 hover-bg-silver grow no-focus-ring"
+                    id="btnFilter" onclick="myFunction()">Filter</button>
+            
+            
+        </div>
+    </section>
 
 
-            </p>
-            <br>
-        </div>
-        <div class="col-md-12 col-sm-12">
-            <div id="map1" class="map"></div>
-        </div>
+
+    <br>
+
+    <div class="col-md-12 col-sm-12">
+        <div id="map1" class="map"></div>
     </div>
-</div>
-
-<script type="text/javascript" src="../../bower_components/leaflet/leaflet.js"></script>
-<script type="text/javascript" src="../../bower_components/Leaflet.MultiOptionsPolyline/Leaflet.MultiOptionsPolyline.js"></script>
-<script type="text/javascript" src="js/myJozi.js"></script>
-<script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="../../bower_components/moment/min/moment.min.js"></script>
-<script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-<script src="lib/jquery.sumoselect.min.js"></script>
-<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        window.testSelAll = $('.testSelAll').SumoSelect({okCancelInMulti:true, selectAll:true });
 
 
-    });
-</script>
+
+    <script type="text/javascript" src="../../bower_components/leaflet/leaflet.js"></script>
+    <script type="text/javascript"
+        src="../../bower_components/Leaflet.MultiOptionsPolyline/Leaflet.MultiOptionsPolyline.js"></script>
+    <script type="text/javascript" src="js/myJozi.js"></script>
+    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js">
+    </script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <script src="lib/jquery.sumoselect.min.js"></script>
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            window.testSelAll = $('.testSelAll').SumoSelect({
+                okCancelInMulti: true,
+                selectAll: true
+            });
 
 
-<script type="text/javascript">
-    // $(function () {
-    //     $('#datetimepicker1').datetimepicker({
-    //         format: 'DD/MM/YYYY HH:mm',
-
-    //        defaultDate: '09/06/2016'
-    //     });
-    //     $('#datetimepicker2').datetimepicker({
-    //         format: 'DD/MM/YYYY HH:mm',
-    //         defaultDate: '10/15/2016',
-    //         useCurrent: false //Important! See issue #1075
-    //     });
-        //$("#datetimepicker1").on("dp.change", function (e) {
-          //  $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
-
-        //});
-        //$("#datetimepicker2").on("dp.change", function (e) {
-        //    $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
-        //});
+        });
+    </script>
 
 
-   // });
-</script>
-<script>
-    function myFunction() {
-        var e = document.getElementById("ddlPerson");
-       // var androidId = e.options[e.selectedIndex].value;
-        var androidIds = document.querySelector("#Persons").value;
-        var mode = document.querySelector("#mode").value;
-        var race = document.querySelector('#race').value;
-        var income = document.querySelector('#income').value;
-        var employment = document.querySelector('#employment').value;
-        var city = document.querySelector('#city').value;
-        var fromDate=document.querySelector("#fromDate").value;
-        var toDate=document.querySelector("#toDate").value;
-        console.log(androidIds,mode,race,income,employment,city,fromDate,toDate);
-        var jsonData;
+    <script type="text/javascript">
+
+    </script>
+    <script>
+        function myFunction() {
+
+            options = document.querySelectorAll('#Persons option');
+            let androidIds = [];
+            for (var i = options.length; i--;) {
+                if (options[i].selected) androidIds.push(options[i].value)
+            }
+
+            console.log(androidIds);
 
 
-    //   $.ajax({
-    //         url: '../../myjozigeojson2.php',
-    //         type: "POST",
-    //         data: { androidids: androidIds, fromDate: fromDate, toDate: toDate, mode: mode, race: race, income: income, employment: employment, city: city},
-    //         dataType: "json",
-    //         success: function (result) {
+            var mode = document.querySelector("#mode").value;
+            var race = document.querySelector('#race').value;
+            var income = document.querySelector('#income').value;
+            var employment = document.querySelector('#employment').value;
+            var city = document.querySelector('#city').value;
+            var fromDate = document.querySelector("#fromDate").value;
+            var toDate = document.querySelector("#toDate").value;
 
-    //             if(result.length>=1){
-    //                 jsonData = result;
-    //                 draw(jsonData);
-    //             }
-    //             else{
-    //                 alert("Sorry, no dataset found!");
 
-    //             }
-    //         }
-    //     });
-   fetch('../../myjozigeojson.php',{
-       method:"POST",
-       headers:{
-           'Accept':'application/json',
-           'Content-type':'application/json'
-       },
-       body: JSON.stringify({androidids: androidIds, fromDate: fromDate, toDate: toDate, mode: mode, race: race, income: income, employment: employment, city: city})
-   })
-   .then(function(data){
-       jsonData = data;
-       console.log(jsonData)
-       //draw(jsonData);
-   })
-   .catch( function(error){
-       console.log("oops" + error);
-   })
-    }
 
-</script>
+            $.ajax({
+                url: '../../myjozigeojson.php',
+                type: "POST",
+                data: {
+                    'androidids': androidIds,
+                    'fromDate': fromDate,
+                    'toDate': toDate,
+                    'mode': mode,
+                    'race': race,
+                    'income': income,
+                    'employment': employment,
+                    'city': city
+                },
+                dataType: "json",
+                success: function (result) {
+
+                    if (result.length >= 1) {
+                        jsonData = result;
+                        console.log(jsonData);
+                        draw(jsonData);
+                    } else {
+                        alert("Sorry, no dataset found!");
+
+                    }
+                }
+            });
+
+
+
+        }
+    </script>
 </body>
+
 </html>
