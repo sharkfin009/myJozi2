@@ -15,6 +15,32 @@
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
         rel='stylesheet' />
     <link href="../css/sumoselect.css" rel="stylesheet" />
+     <script type="text/javascript" src="../../bower_components/leaflet/leaflet.js"></script>
+     <script type="text/javascript"
+         src="../../bower_components/Leaflet.MultiOptionsPolyline/Leaflet.MultiOptionsPolyline.js"></script>
+     <script type="text/javascript" src="js/myJozi.js"></script>
+     <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+     <script type="text/javascript" src="../../bower_components/moment/min/moment.min.js"></script>
+     <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+     <script type="text/javascript"
+         src="../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js">
+     </script>
+     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'>
+     </script>
+     <script src="lib/jquery.sumoselect.min.js"></script>
+     <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+
+     <script type="text/javascript">
+         $(document).ready(function () {
+
+             window.testSelAll = $('.testSelAll').SumoSelect({
+                 okCancelInMulti: true,
+                 selectAll: true
+             });
+
+
+         });
+     </script>
     <style>
         @media (min-width: 2000px) {
             .map {
@@ -39,7 +65,7 @@
         <div class="">
             <h1 class="tc pa3">MyJozi Map Analyser <small>Version 0.1</small></h1>
         </div>
-        <div class="w-100 ph7  flex flex-wrap items-around justify-around ">
+        <div class="w-100 ph7 flex flex-wrap items-around justify-around ">
             <div class="w5 mr2">
                 <label class="w5 tr">name of person/s</label>
                 <select class="w5 no-focus-ring" id="Persons" placeholder="Select Person/s">
@@ -501,9 +527,6 @@
             
         </div>
     </section>
-
-
-
     <br>
 
     <div class="col-md-12 col-sm-12">
@@ -512,36 +535,10 @@
 
 
 
-    <script type="text/javascript" src="../../bower_components/leaflet/leaflet.js"></script>
-    <script type="text/javascript"
-        src="../../bower_components/Leaflet.MultiOptionsPolyline/Leaflet.MultiOptionsPolyline.js"></script>
-    <script type="text/javascript" src="js/myJozi.js"></script>
-    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/moment/min/moment.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript"
-        src="../../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js">
-    </script>
-    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-    <script src="lib/jquery.sumoselect.min.js"></script>
-    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            window.testSelAll = $('.testSelAll').SumoSelect({
-                okCancelInMulti: true,
-                selectAll: true
-            });
+   
 
 
-        });
-    </script>
-
-
-    <script type="text/javascript">
-
-    </script>
+   
     <script>
         function myFunction() {
 
@@ -550,10 +547,7 @@
             for (var i = options.length; i--;) {
                 if (options[i].selected) androidIds.push(options[i].value)
             }
-
             console.log(androidIds);
-
-
             var mode = document.querySelector("#mode").value;
             var race = document.querySelector('#race').value;
             var income = document.querySelector('#income').value;
@@ -594,6 +588,7 @@
 
 
         }
+        MyJozi();
     </script>
 </body>
 

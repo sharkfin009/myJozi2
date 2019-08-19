@@ -1,45 +1,42 @@
-
+alert("my jozi js");
 var counter=0;
 var MyJozi=(function(){
 
     var instance;
 
-    function MyJozi() {
-
-        // If it's being called again, throw an error
-        if (typeof instance != "undefined") {
-            throw new Error("Client can only be instantiated once.");
+    class MyJozi {
+        constructor() {
+            // If it's being called again, throw an error
+            if (typeof instance != "undefined") {
+                throw new Error("Client can only be instantiated once.");
+            }
+            // initialize here
+            this.mapId = 'map1';
+            this.selected = 'activity';
+            this.tilesKey1 = 'mapQuest';
+            this.tilesKey2 = 'osm';
+            this.tilesKey3 = 'stamenLayer';
+            this.tilesKey4 = 'topoMap';
+            this.tilesKey5 = 'satellite';
+            //this.datapoints=datapoints;
+            this.loadData();
+            // Keep a closured reference to the instance
+            instance = this;
         }
-
-        // initialize here
-        this.mapId = 'map1';
-        this.selected = 'activity';
-        this.tilesKey1 = 'mapQuest';
-        this.tilesKey2 = 'osm';
-        this.tilesKey3 = 'stamenLayer';
-        this.tilesKey4 = 'topoMap';
-        this.tilesKey5 = 'satellite';
-        //this.datapoints=datapoints;
-
-        this.loadData();
-
-        // Keep a closured reference to the instance
-        instance = this;
-    }
-
-    // Add public methods to Client.prototype
-    MyJozi.prototype.myPublic = function() {
-
-    }
-
-    MyJozi.getSingletonInstance = function() {
-        if (typeof instance == "undefined") {
-            return new this();
+        // Add public methods to Client.prototype
+        myPublic() {
         }
-        else {
-            return instance;
+        static getSingletonInstance() {
+            if (typeof instance == "undefined") {
+                return new this();
+            }
+            else {
+                return instance;
+            }
         }
     }
+
+
 
     MyJozi.prototype = {
         constructor: MyJozi,
@@ -393,12 +390,14 @@ createJSON(me.joziLineStringList);
     return MyJozi;
 })();
 
-function MyLineStringData() {
-  this.androidID = '';
-  this.starttime = '';
-  this.endtime  ='';
-  this.mode='';
-  this.coordinates = [];
+class MyLineStringData {
+    constructor() {
+        this.androidID = '';
+        this.starttime = '';
+        this.endtime = '';
+        this.mode = '';
+        this.coordinates = [];
+    }
 }
 
 function exportToJsonFile(jsonData) {
