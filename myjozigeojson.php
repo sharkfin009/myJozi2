@@ -27,7 +27,7 @@ file_put_contents(__DIR__ . "/dump.php",$androidids );
     // connecting to db
     //$db = db_connect();
 
-$query = "SELECT ANDROIDID,TIMESTMP FROM ACTIVITYLOCATION";
+$query = "SELECT ANDROIDID,TIMESTMP,LONGITUDE,LATITUDE,ACTIVITYNAME FROM ACTIVITYLOCATION";
 
 $result = $mysqli->query($query);
 
@@ -36,8 +36,9 @@ if ($result->num_rows > 0) {
   while ($row = mysqli_fetch_array($result)) {
     $row_array['name'] = $row['ANDROIDID'];
     $row_array['activity'] = $row['ACTIVITYNAME'];
-    $row_array['lat'] = $row['LATITUDE'];
     $row_array['lng'] = $row['LONGITUDE'];
+    $row_array['lat'] = $row['LATITUDE'];
+
     $row_array['timestamp'] = $row['TIMESTMP'];
 
     array_push($response, $row_array);
