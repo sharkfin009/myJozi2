@@ -68,9 +68,9 @@
         <div class="w-100 ph7 flex flex-wrap items-around justify-around ">
             <div class="w5 mr2">
                 <label class="w5 tr">name of person/s</label>
-                <select class="w5 no-focus-ring" id="Persons" placeholder="Select Person/s">
+                <select class="w5 no-focus-ring" id="Persons" multiple="multiple"   placeholder="Select Person/s">
                     <option value="aa35450b4a4084c1">person1</option>
-                    <option value="a09727247b591873">person2</option>
+                    <option selected="selected" value="a09727247b591873">person2</option>
                     <option value="180d2e955d575bde">person3</option>
                     <option value="76c849a8469ceb29">person4</option>
                     <option value="6f77b40a9d121222">person5</option>
@@ -547,7 +547,7 @@
             for (var i = options.length; i--;) {
                 if (options[i].selected) androidIds.push(options[i].value)
             }
-            console.log(androidIds);
+           
             var mode = document.querySelector("#mode").value;
             var race = document.querySelector('#race').value;
             var income = document.querySelector('#income').value;
@@ -576,7 +576,7 @@
 
                     if (result.length >= 1) {
                         jsonData = result;
-                        console.log(jsonData);
+                        console.log('SUCCESS:'+jsonData);
                         draw(jsonData);
                     } else {
                         alert("Sorry, no dataset found!");

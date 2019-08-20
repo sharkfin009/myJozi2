@@ -18,7 +18,7 @@ $income = $_POST['income'];
 $employment = $_POST['employment'];
 $city = $_POST['city'];
 
-file_put_contents(__DIR__ . "/dump.php",$androidids );
+
 
 
 
@@ -27,7 +27,32 @@ file_put_contents(__DIR__ . "/dump.php",$androidids );
     // connecting to db
     //$db = db_connect();
 
-$query = "SELECT ANDROIDID,TIMESTMP,LONGITUDE,LATITUDE,ACTIVITYNAME FROM ACTIVITYLOCATION";
+//ben's test query
+//$query = "SELECT ANDROIDID,TIMESTMP,LONGITUDE,LATITUDE,ACTIVITYNAME FROM ACTIVITYLOCATION";
+
+// Markus's query code
+
+    // mysql inserting a new row
+
+    $prefix = $IDList = '';
+    foreach ($androidids as $ID){
+      $IDList .= $prefix . $ID ;
+      $prefix = ', ';
+    }
+   
+
+  $query = "SELECT ANDROIDID, TIMESTMP, ACTIVITYNAME, LONGITUDE, LATITUDE FROM ACTIVITYLOCATION 
+   WHERE STR_TO_DATE(TIMESTMP , '%d\/%m\/%Y %H:%i') BETWEEN STR_TO_DATE('$fromDate' , '%Y%m%d') AND STR_TO_DATE('$toDate' , '%Y%m%d') AND ANDROIDID IN ($IDList) ";
+//$query ="SELECT TIMESTMP FROM ACTIVITYLOCATION";
+
+//  if ($mode != 'All') {
+//    $query .= "AND ACTIVITYNAME='$mode' ";
+//  }
+file_put_contents(__DIR__ . "/dump.php", $query);
+
+
+$query .= " ORDER by TIMESTMP ASC";
+
 
 $result = $mysqli->query($query);
 
@@ -53,6 +78,7 @@ if ($result->num_rows > 0) {
 $file = 'results.json';
 $current = json_encode($totalresponse);
 file_put_contents($file, $current);
+echo json_encode($totalresponse);
 
 // $fp = fopen('results.json', 'w');
 // fwrite($fp, json_encode($totalresponse));
@@ -67,47 +93,3 @@ file_put_contents($file, $current);
 
 
 
-
-// Markus's query code
-
-    // mysql inserting a new row
-
-    // $prefix = $IDList = '';
-    // foreach ($androidids as $ID){
-    //   $IDList .= $prefix . '"' . $ID . '"';
-    //   $prefix = ', ';
-    // }
-
-
-// if ($race != 'All' ||  $income != 'All' ||  $employment != 'All'  ||   $city != 'All') {
-
-//   $query = "SELECT al.androidid, al.timestamp, al.activityname, al.longitude, al.latitude FROM ACTIVITYLOCATION al LEFT JOIN SURVEYQUESTIONS sq ON (al.androidid=sq.androidid)
-//     WHERE  STR_TO_DATE(al.timestamp , '%d/%m/%Y %H:%i') between STR_TO_DATE('$fromDate' , '%d/%m/%Y %H:%i') AND STR_TO_DATE('$toDate' , '%d/%m/%Y %H:%i') AND al.androidid IN ($IDList) ";
-// } else {
-//   $query = "SELECT al.androidid, al.timestamp, al.activityname, al.longitude, al.latitude FROM ACTIVITYLOCATION al
-//     WHERE  STR_TO_DATE(al.timestamp , '%d/%m/%Y %H:%i') between STR_TO_DATE('$fromDate' , '%d/%m/%Y %H:%i') AND STR_TO_DATE('$toDate' , '%d/%m/%Y %H:%i')  AND al.androidid IN ($IDList) ";
-// }
-
-
-// if ($mode != 'All') {
-//   $query .= "AND al.activityname='$mode' ";
-// }
-
-// if ($race != 'All') {
-//   $query .= "AND sq.SURVEYQUESTION17='$race' ";
-// }
-
-// if ($income != 'All') {
-//   $query .= "AND sq.SURVEYQUESTION19='$income' ";
-// }
-
-// if ($employment != 'All') {
-//   $query .= "AND sq.SURVEYQUESTION6='$employment' ";
-// }
-
-// if ($city != 'All') {
-//   $query .= "AND sq.SURVEYQUESTION1='$city' ";
-// }
-
-
-// $query .= " ORDER by al.timestamp ASC";
