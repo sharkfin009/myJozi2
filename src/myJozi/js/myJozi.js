@@ -1,4 +1,4 @@
-alert("my jozi js");
+
 var counter=0;
 var MyJozi=(function(){
 
