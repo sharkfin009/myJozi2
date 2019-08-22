@@ -69,12 +69,12 @@
             <div class="w5 mr2">
                 <label class="w5 tr">name of person/s</label>
                 <select class="w5 no-focus-ring" id="Persons" multiple="multiple"   placeholder="Select Person/s">
-                    <option value="aa35450b4a4084c1">person1</option>
+                    <option value="aa35450b4a4084c1"></option>
                     <option selected="selected" value="a09727247b591873">person2</option>
-                    <option value="180d2e955d575bde">person3</option>
-                    <option value="76c849a8469ceb29">person4</option>
-                    <option value="6f77b40a9d121222">person5</option>
-                    <option value="8b5cd36b6bbf279">person6</option>
+                    <option value="180d2e955d575bde"></option>
+                    <option value="76c849a8469ceb29"></option>
+                    <option value="6f77b40a9d121222"></option>
+                    <option value="8b5cd36b6bbf279"></option>
                     <option value="d30f21ead669b524"></option>
                     <option value="2012571f06914863"></option>
                     <option value="7e6fec05f140c284"></option>
@@ -556,8 +556,6 @@
             var fromDate = document.querySelector("#fromDate").value;
             var toDate = document.querySelector("#toDate").value;
 
-
-
             $.ajax({
                 url: '../../myjozigeojson.php',
                 type: "POST",
@@ -576,7 +574,7 @@
 
                     if (result.length >= 1) {
                         jsonData = result;
-                        console.log('SUCCESS:'+jsonData);
+                       // console.log('SUCCESS:'+JSON.stringify(jsonData));
                         draw(jsonData);
                     } else {
                         alert("Sorry, no dataset found!");
@@ -584,9 +582,6 @@
                     }
                 }
             });
-
-
-
         }
        
     </script>
