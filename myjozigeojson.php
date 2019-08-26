@@ -35,14 +35,14 @@ $query = "SELECT ANDROIDID,TIMESTMP,LONGITUDE,LATITUDE,ACTIVITYNAME FROM ACTIVIT
     }
    
 
-//$query = "SELECT ANDROIDID, TIMESTMP, ACTIVITYNAME, LONGITUDE, LATITUDE FROM ACTIVITYLOCATION 
-//WHERE ANDROIDID IN ($IDList) AND STR_TO_DATE(TIMESTMP , '%d/%m/%Y %H:%i:%s') BETWEEN STR_TO_DATE('$fromDate' , '%Y-%m-%d') AND STR_TO_DATE('$toDate' , '%Y-%m-%d')";
+// $query = "SELECT ANDROIDID, TIMESTMP, ACTIVITYNAME, LONGITUDE, LATITUDE FROM ACTIVITYLOCATION 
+// WHERE ANDROIDID IN ($IDList) AND STR_TO_DATE(TIMESTMP , '%d/%m/%Y %H:%i:%s') BETWEEN STR_TO_DATE('$fromDate' , '%Y-%m-%d') AND STR_TO_DATE('$toDate' , '%Y-%m-%d')";
 //$query ="SELECT TIMESTMP FROM ACTIVITYLOCATION";
 
 //  if ($mode != 'All') {
 //   $query .= "AND ACTIVITYNAME='$mode' ";
 //  }
-file_put_contents(__DIR__ . "/dump.php", $IDList);
+//file_put_contents(__DIR__ . "/dump.php", $query);
 
 
 //$query .= "ORDER by TIMESTMP ASC";
@@ -69,7 +69,8 @@ if ($result->num_rows > 0) {
   echo "0 results";}
 
 
-$file = 'results.json';
+$file = '/results.json';
+file_put_contents(__DIR__.$file,json_encode($result));
 $current = json_encode($totalresponse);
 
 echo json_encode($totalresponse);
