@@ -207,25 +207,25 @@ var MyJozi = (function () {
 
                 },
                 options: [{
-                        color: '#00FF00'
+                        color: '#00FF00'//00FF00
                     }, {
-                        color: '#0040FF'
+                        color: '#0040FF'//0040FF
                     }, {
-                        color: '#0080FF'
+                        color: '#0080FF'//0080FF
                     },
                     {
-                        color: '#00FFB0'
+                        color: '#00FFB0'//00FFB0
                     }, {
-                        color: '#00E000'
+                        color: '#00E000'//00E000
                     }, {
-                        color: '#80FF00'
+                        color: '#80FF00'//80FF00
                     },
                     {
-                        color: '#FFFF00'
+                        color: '#FFFF00'//FFFF00
                     }, {
-                        color: '#FFC000'
+                        color: '#FFC000'//FFC000
                     }, {
-                        color: '#FF0000'
+                        color: '#FF0000'//FF0000
                     }
                 ]
             }
@@ -440,16 +440,7 @@ function createGeoJSON(input) {
     exportToJsonFile(outoutString);
 }
 
-
-
-
 function createJSON(obj) {
-
-
-
-
-
-
 
     var str = '{\n\
   "type": "FeatureCollection",\n\
@@ -492,11 +483,11 @@ function createJSON(obj) {
         }
         if ("Tilting" == obj[k].mode) {
 
-            lineColor = "#00E000";
+            lineColor = "#93f5f0";
         }
         if ("On Bicycle" == obj[k].mode) {
 
-            lineColor = "#80FF00";
+            lineColor = "#ebd534";
         }
 
 

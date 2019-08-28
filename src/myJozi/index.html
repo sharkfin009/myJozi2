@@ -65,116 +65,158 @@
         <div class="">
             <h1 class="tc pa3">MyJozi Map Analyser <small>Version 0.1</small></h1>
         </div>
-        <div class="w-100 ph7 flex flex-wrap items-around justify-around ">
-            <div class="w5 mr2">
-                <label class="w5 tr">name of person/s</label>
-                <select class="w5 no-focus-ring" id="Persons" multiple="multiple" placeholder="Select Person/s">
-                    <!-- from 'surveyquestions' -->
-                    <option value="6515aa2d583698f4">person 1</option>
-                    <option value="9e1b4b8b3c61b1b5">person 2</option>
-                    <option value="7dc91f154431ca6d">person 3</option>
-                    <option value="ca55a878a058d274">person 4</option>
-                    <option value="d55de76e2fc40737">person 5</option>
-                    <option value="04b9b44a5afef988f">person 6</option>
-                    <option value="91336ab4c96e32ff">person 7</option>
-                    <!-- from 'myday' -->
-                    <option value="4b9b44a5afef988f">person 8</option>
-                    <option value="7431cbe2d2180c95">person 9</option>
-                    <option value="63b4ca12ccb784b0">person 10</option>
+        <div data-form class="w-100 dg gtc3 ph6">
+            <div data-left class="">
+                <div class="fr w5">
+                    <label class="w5  tr">name of person/s</label>
+                    <select class="w5  bgGray br3 pa2 no-focus-ring" id="Persons" multiple="multiple"
+                        placeholder="Select Person/s">
+                        <!-- from ACTIVITYLOCATIONS -->                
+                        
+                        <option value="7dc91f154431ca6d">e98135c808dc38c5 </option>
+                        <option value="ca55a878a058d274">ca55a878a058d274 </option>
+                        <option value="7431cbe2d2180c95">7431cbe2d2180c95 </option>
+                       <option value="9e1b4b8b3c61b1b5">9e1b4b8b3c61b1b5 </option>
+                       <option value="d55de76e2fc40737">d55de76e2fc40737 </option>  
+                        <option value="7dc91f154431ca6d">7dc91f154431ca6d</option>
+                        <option value="4b9b44a5afef988f">4b9b44a5afef988f</option>
+                        <option value="91336ab4c96e32ff">91336ab4c96e32ff</option>
+                        <!-- from 'surveyquestions' -->
+                        <!-- <option selected="selected" value="6515aa2d583698f4">6515aa2d583698f4</option>
+                        <option value="9e1b4b8b3c61b1b5">9e1b4b8b3c61b1b5</option>
+                        <option value="7dc91f154431ca6d">7dc91f154431ca6d</option>
+                        <option value="ca55a878a058d274">ca55a878a058d274</option>
+                        <option value="d55de76e2fc40737">d55de76e2fc40737</option>
+                        <option value="04b9b44a5afef988f">04b9b44a5afef988f</option>
+                        <option value="91336ab4c96e32ff">91336ab4c96e32ff</option>-->
+                        <!-- from 'myday' -->
+                        <!-- <option value="4b9b44a5afef988f">4b9b44a5afef988f</option>
+                        <option value="7431cbe2d2180c95">7431cbe2d2180c95</option>
+                        <option value="63b4ca12ccb784b0">63b4ca12ccb784b0</option> --> -->
 
 
 
 
-
-                </select>
+                    </select>
+                </div>
             </div>
-            <div class="w5 mr2">
-                <label class="w5 tr">transport mode</label>
-                <select class="w5 tr no-focus-ring" id="mode">
-                    <option value="All">All</option>
-                    <option value="On Foot">Walking</option>
-                    <option value="In Vehic">Vehicle</option>
-                    <option value="On Bicyc">Cycling</option>
-                    <option value="Still">Still</option>
-                </select>
-            </div>
-            <div class="w5 mr2">
-                <label class="w5 tr">race</label>
-                <select class="w5 no-focus-ring" id="race" placeholder="Select Race" class="selectpicker">
-                    <option value="All">All</option>
-                    <option value="African">African</option>
-                    <option value="Coloured">Coloured</option>
-                    <option value="Indian/Asian">Indian/Asian</option>
-                    <option value="White">White</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-            <div class="w5 mr2">
-                <label class="w5 tr">income</label>
-                <select class="w5 no-focus-ring" id="income" placeholder="Select Income" class="selectpicker">
-                    <option value="All">All</option>
-                    <option value="R1 - R400">R1 - R400</option>
-                    <option value="R401 - R800">R401 - R800</option>
-                    <option value="R801 - R1 600">R801 - R1 600</option>
-                    <option value="R1 601 - R3 200">R1 601 - R3 200</option>
-                    <option value="R6 401 - R12 800">R6 401 - R12 800</option>
-                    <option value="R12 801 - R19 200">R12 801 - R19 200</option>
-                    <option value="R19 201 - R25 600">R19 201 - R25 600</option>
-                    <option value="R25 601 - R38 400">R25 601 - R38 400</option>
-                    <option value="R38 401 - R51 200">R38 401 - R51 200</option>
-                    <option value="R51 201 - R76 800">R51 201 - R76 800</option>
-                    <option value="R76 801 - R102 400">R76 801 - R102 400</option>
-                    <option value="More">More</option>
-                    <option value="No Income">No Income</option>
-                </select>
-            </div>
-            <div class="w5 mr2">
-                <label class="w5 tr">employment</label>
-                <select class="w5 no-focus-ring" id="employment" placeholder="Select Employment" class="selectpicker">
-                    <option value="All">All</option>
-                    <option value="Not currently employed">Not currently employed</option>
-                    <option value="Employed full time, formal sector">Employed full time, formal sector</option>
-                    <option value="Employed part time, formal sector">Employed part time, formal sector</option>
-                    <option value="Employed full time, informal sector">Employed full time, informal sector</option>
-                    <option value="Employed part time, informal sector">Employed part time, informal sector</option>
-                    <option value="Self-employed, own business, NOT working from home">Self-employed, own business,
-                        NOT working from home</option>
-                    <option value="Self-employed, own business, working from home">Self-employed, own business,
-                        working from home</option>
-                </select>
-            </div>
-            <div class="w5 mr2 ">
-                <label class="w5 tr">city</label>
-                <select class="w5 no-focus-ring" id="city" placeholder="Select Municipality" class="selectpicker">
-                    <option value="All">All</option>
-                    <option value="Johannesburg">Johannesburg</option>
-                    <option value="Ekurhuleni">Ekurhuleni</option>
-                    <option value="Tshwane">Tshwane</option>
-                    <option value="Sedibeng">Sedibeng</option>
-                    <option value="West Rand">West Rand</option>
-                    <option value="Metsweding">Metsweding</option>
-                </select>
-            </div>
+            <div data-center class="">
+                <div class="w-100 ph2 flex flex-wrap items-around justify-center">
 
-        </div>
-        <div class=" w-100 ph7 mt4 flex justify-center">
-
-            <div class="w5 mh5 ">
-                <label class="w5 tr" for="fromDate">from date:</label>
-                <input class="b--solid br4 b--black-40 bg-black-10 w5 ph3 no-focus-ring" type="date" id="fromDate"
-                    value="2016-09-09" name="fromDate">
-            </div>
-            <div class="w5 mh5">
-                <label class="w5 tr" for="toDate">to date:</label>
-                <input class="b--solid br4 b--black-40 bg-black-10 w5 ph3 no-focus-ring" type="date" id="toDate"
-                    value="2016-10-15" name="toDate">
-            </div>
-            <button
-                class="w-30 mh5 b--solid br4 b--gray mt4 ph5 f-4 bg-black-50 white-90 hover-bg-silver grow no-focus-ring"
-                id="btnFilter" onclick="myFunction()">Filter</button>
+                    <div class="w5 mh3">
+                        <label class=" w5 tr">transport mode</label>
+                        <select class="w5 tr no-focus-ring" id="mode">
+                            <option value="All">All</option>
+                            <option value="On Foot">Walking</option>
+                            <option value="In Vehic">Vehicle</option>
+                            <option value="On Bicyc">Cycling</option>
+                            <option value="Still">Still</option>
+                        </select>
+                    </div>
+                    <div class="w5 mh3">
+                        <label class="w5 tr">race</label>
+                        <select class="w5 no-focus-ring" id="race" placeholder="Select Race" class="selectpicker">
+                            <option value="All">All</option>
+                            <option value="African">African</option>
+                            <option value="Coloured">Coloured</option>
+                            <option value="Indian/Asian">Indian/Asian</option>
+                            <option value="White">White</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="w5 mh3">
+                        <label class="w5 tr">income</label>
+                        <select class="w5 no-focus-ring" id="income" placeholder="Select Income" class="selectpicker">
+                            <option value="All">All</option>
+                            <option value="R1 - R400">R1 - R400</option>
+                            <option value="R401 - R800">R401 - R800</option>
+                            <option value="R801 - R1 600">R801 - R1 600</option>
+                            <option value="R1 601 - R3 200">R1 601 - R3 200</option>
+                            <option value="R6 401 - R12 800">R6 401 - R12 800</option>
+                            <option value="R12 801 - R19 200">R12 801 - R19 200</option>
+                            <option value="R19 201 - R25 600">R19 201 - R25 600</option>
+                            <option value="R25 601 - R38 400">R25 601 - R38 400</option>
+                            <option value="R38 401 - R51 200">R38 401 - R51 200</option>
+                            <option value="R51 201 - R76 800">R51 201 - R76 800</option>
+                            <option value="R76 801 - R102 400">R76 801 - R102 400</option>
+                            <option value="More">More</option>
+                            <option value="No Income">No Income</option>
+                        </select>
+                    </div>
+                    <div class="w5 mh3">
+                        <label class="w5 tr">employment</label>
+                        <select class="w5 no-focus-ring" id="employment" placeholder="Select Employment"
+                            class="selectpicker">
+                            <option value="All">All</option>
+                            <option value="Not currently employed">Not currently employed</option>
+                            <option value="Employed full time, formal sector">Employed full time, formal sector</option>
+                            <option value="Employed part time, formal sector">Employed part time, formal sector</option>
+                            <option value="Employed full time, informal sector">Employed full time, informal sector
+                            </option>
+                            <option value="Employed part time, informal sector">Employed part time, informal sector
+                            </option>
+                            <option value="Self-employed, own business, NOT working from home">Self-employed, own
+                                business,
+                                NOT working from home</option>
+                            <option value="Self-employed, own business, working from home">Self-employed, own business,
+                                working from home</option>
+                        </select>
+                    </div>
+                    <div class="w5 mh3 ">
+                        <label class="w5 tr">city</label>
+                        <select class="w5 no-focus-ring" id="city" placeholder="Select Municipality"
+                            class="selectpicker">
+                            <option value="All">All</option>
+                            <option value="Johannesburg">Johannesburg</option>
+                            <option value="Ekurhuleni">Ekurhuleni</option>
+                            <option value="Tshwane">Tshwane</option>
+                            <option value="Sedibeng">Sedibeng</option>
+                            <option value="West Rand">West Rand</option>
+                            <option value="Metsweding">Metsweding</option>
+                        </select>
+                    </div>
 
 
-        </div>
+                </div>
+                <div class="w-100 ph2 flex flex-wrap items-around justify-center">
+                    <div class="w5 mh3">
+                        <label class="w5 tr mt4" for="fromDate">from date:</label>
+                        <input class="b--solid br3 b--black-40 bg-black-10 w5 ph3 no-focus-ring" type="date"
+                            id="fromDate" value="2019-06-27" name="fromDate">
+                    </div>
+                    <div class="w5 mh3 mt4">
+                        <label class="w5 tr" for="toDate">to date:</label>
+                        <input class="b--solid br3 b--black-40 bg-black-10 w5 ph3 no-focus-ring" type="date" id="toDate"
+                            value="2019-07-17" name="toDate">
+                    </div>
+                    <button
+                        class="w5 mh3 b--solid br3 bg-black-40 mt4   f-4 bg-black-50 white-90 hover-bg-black-30 grow no-focus-ring"
+                        id="btnFilter" onclick="myFunction()">Filter</button>
+                </div>
+
+            </div>
+            <div data-right>
+                <div class="w5 ">
+                    <div data-key-wrapper class="flex flex-wrap justify-center">
+                        <label class="w-100 tr">transport color key</label>
+                        <div class="w-100 flex flex-wrap justify-around ba pa2 br3 bcGray bgGray">
+                            <div data-colors class="w2 ">
+                                <div class="br3 mb1 bg-on-foot">&nbsp</div>
+                                <div class="br3 mb1 bg-in-vehic">&nbsp</div>
+                                <div class="br3 mb1 bg-on-bike">&nbsp</div>
+                            </div>
+                            <div data-names class="  ">
+
+                                <div class="mb1">on foot</div>
+                                <div class="mb1">in vehicle</div>
+                                <div class="mb1">on bicycle</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
     </section>
     <br>
 
@@ -190,7 +232,6 @@
 
     <script>
         function myFunction() {
-
             options = document.querySelectorAll('#Persons option');
             let androidIds = [];
             for (var i = options.length; i--;) {

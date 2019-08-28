@@ -9076,3 +9076,39 @@ code {
 button:focus{
     outline:none;
 }
+.dg{
+    display:grid;
+}
+.gtc3{
+    grid-template-columns: 1fr 2.5fr 1fr;
+}
+.bg-unknown{
+    background-color: #00FF00;
+
+}
+.bg-on-foot{
+    background-color: #0040FF;
+    
+}
+.bg-in-vehic{
+    background-color:#00FFB0;
+     
+}
+.bg-on-bike{
+    background-color:#ebd534;
+    
+}
+.bg-still{
+    background-color:#0080FF;
+     
+}
+.bg-tilting{
+    background-color:#93f5f0;
+
+}
+.bcGray{
+    border-color:rgba(128, 128, 128, 0.616);
+}
+.bgGray{
+    background-color:rgba(128, 128, 128, 0.116);
+}
